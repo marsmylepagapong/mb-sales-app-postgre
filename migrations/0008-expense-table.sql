@@ -1,0 +1,9 @@
+CREATE TABLE "Expense" (
+    "Id" SERIAL PRIMARY KEY,
+    "SaleId" INT NOT NULL,
+    "Amount" NUMERIC(18,2) NOT NULL,
+    "Note" TEXT NULL,
+    "DateCreated" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "IsActive" BOOLEAN NOT NULL DEFAULT TRUE,
+    CONSTRAINT fk_expense_sale FOREIGN KEY ("SaleId") REFERENCES "Sale"("Id") ON DELETE CASCADE
+);

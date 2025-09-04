@@ -1,0 +1,10 @@
+CREATE TABLE "Denom" (
+    "Id" SERIAL PRIMARY KEY,
+    "SaleId" INT NOT NULL,
+    "TypeId" INT NOT NULL,
+    "Quantity" INT NOT NULL,
+    "Amount" NUMERIC(18,2) NOT NULL,
+    "DateCreated" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "IsActive" BOOLEAN NOT NULL DEFAULT TRUE,
+    CONSTRAINT fk_denom_sale FOREIGN KEY ("SaleId") REFERENCES "Sale"("Id") ON DELETE CASCADE
+);
