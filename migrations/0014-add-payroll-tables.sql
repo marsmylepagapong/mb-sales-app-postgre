@@ -47,7 +47,7 @@ CREATE INDEX idx_payrollitem_employee ON "PayrollItem" ("EmployeeId");
 CREATE TABLE "PayrollEarning" (
     "Id" SERIAL PRIMARY KEY,
     "PayrollItemId" int NOT NULL,
-    "Type" int NOT NULL,
+    "TypeId" int NOT NULL,
     "Amount" numeric(18,2) NOT NULL DEFAULT 0,
     "Note" text,
     "DateCreated" timestamptz NOT NULL DEFAULT now(),
@@ -59,7 +59,7 @@ CREATE TABLE "PayrollEarning" (
 );
 
 CREATE INDEX idx_payrollearning_item ON "PayrollEarning" ("PayrollItemId");
-CREATE INDEX idx_payrollearning_type ON "PayrollEarning" ("Type");
+CREATE INDEX idx_payrollearning_type ON "PayrollEarning" ("TypeId");
 
 
 -- =====================
@@ -68,7 +68,7 @@ CREATE INDEX idx_payrollearning_type ON "PayrollEarning" ("Type");
 CREATE TABLE "PayrollDeduction" (
     "Id" SERIAL PRIMARY KEY,
     "PayrollItemId" int NOT NULL,
-    "Type" int NOT NULL,
+    "TypeId" int NOT NULL,
     "Amount" numeric(18,2) NOT NULL DEFAULT 0,
     "Note" text,
     "DateCreated" timestamptz NOT NULL DEFAULT now(),
@@ -80,4 +80,4 @@ CREATE TABLE "PayrollDeduction" (
 );
 
 CREATE INDEX idx_payrolldeduction_item ON "PayrollDeduction" ("PayrollItemId");
-CREATE INDEX idx_payrolldeduction_type ON "PayrollDeduction" ("Type");
+CREATE INDEX idx_payrolldeduction_type ON "PayrollDeduction" ("TypeId");
