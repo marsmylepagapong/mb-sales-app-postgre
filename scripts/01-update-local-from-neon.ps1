@@ -3,10 +3,10 @@
 # --------------------------------------
 
 # Neon connection URL
-$NEON_CONN = // replace with neon connection string
+$NEON_CONN = // replace neon connection string
 
 # Local PostgreSQL connection
-$LOCAL_DB = // replace with your local connection string
+$LOCAL_DB = // replace local connection string
 
 # -----------------------
 # Step 1: Dump and apply schema
