@@ -3,6 +3,7 @@
 -- =====================
 CREATE TABLE "Payroll" (
     "Id" SERIAL PRIMARY KEY,
+    "PayrollDate" date NOT NULL,
     "DateFrom" date NOT NULL,
     "DateTo" date NOT NULL,
     "TotalNetPay" numeric(18,2) NOT NULL DEFAULT 0,
